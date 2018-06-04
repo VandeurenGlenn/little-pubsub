@@ -1,7 +1,7 @@
-/* socket-request version 0.1.0 */
+/* little-pubsub version 0.2.0 */
 'use strict';
 
-const ENVIRONMENT = {version: '0.1.0', production: true};
+const ENVIRONMENT = {version: '0.2.0', production: true};
 
 class PubSub {
 
@@ -9,7 +9,8 @@ class PubSub {
    * Creates handlers
    */
   constructor() {
-    this.handlers = [];
+    this.subscribers = {};
+    this.values = [];
   }
 
   /**
@@ -21,7 +22,21 @@ class PubSub {
     if (typeof context === 'undefined') {
       context = handler;
     }
-    this.handlers.push({event: event, handler: handler.bind(context)});
+    this.subscribers[event] = this.subscribers[event] || { handlers: []};
+    this.subscribers[event].handlers.push(handler.bind(context));
+  }
+
+  /**
+   * @param {String} event
+   * @param {Method} handler
+   * @param {HTMLElement} context
+   */
+  unsubscribe(event, handler, context) {
+    if (typeof context === 'undefined') {
+      context = handler;
+    }
+    const i = this.subscribers[event].handlers.indexOf(handler.bind(context));
+    this.subscribers[event].handlers.splice(i);
   }
 
   /**
@@ -29,16 +44,11 @@ class PubSub {
    * @param {String|Number|Boolean|Object|Array} change
    */
   publish(event, change) {
-    for (let i = 0; i < this.handlers.length; i++) {
-      if (this.handlers[i].event === event) {
-        let oldValue = this.handlers[i].oldValue;
-        // dirty checking value, ensures that we don't create a loop
-        if (oldValue !== change.value) {
-          this.handlers[i].handler(change, this.handlers[i].oldValue);
-          this.handlers[i].oldValue = change.value;
-        }
-      }
-    }
+    this.subscribers[event].handlers.forEach(handler => {
+      if (this.values[event] !== change)
+        handler(change, this.values[event]);
+        this.values[event] = change;
+      });
   }
 }
 

@@ -1,10 +1,22 @@
-# socket-request
-> Simple WebSocket request/response server & client
+# little-pubsub
+> Small publish & subscribe class
 
-## usage
+## INSTALL
+
+#### npm
+```sh
+npm i --save little-pubsub
+```
+
+#### yarn
+```sh
+yarn add little-pubsub
+```
+
+## USAGE
 
 ```js
-import { PubSub } from 'little-pubsub';
+import PubSub from 'little-pubsub';
 const pubsub = new PubSub();
 ```
 
@@ -19,6 +31,16 @@ pubsub.subscribe('event-name', data => {
   console.log(data);
 })
 ```
+#### subscribe
+`name`: name of the channel to unsubscribe for<br>
+`handler`: method<br>
+`context`: context<br>
+```js
+pubsub.subscribe('event-name', data => {
+  console.log(data);
+})
+```
+
 #### publish
 `name`: name of the channel to publish to<br>
 `handler`: method<br>
