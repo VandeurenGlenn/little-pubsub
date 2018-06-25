@@ -5,7 +5,6 @@ export default class PubSub {
    */
   constructor() {
     this.subscribers = {};
-    this.values = [];
   }
 
   /**
@@ -17,7 +16,7 @@ export default class PubSub {
     if (typeof context === 'undefined') {
       context = handler;
     }
-    this.subscribers[event] = this.subscribers[event] || { handlers: []};
+    this.subscribers[event] = this.subscribers[event] || { handlers: [], value: null};
     this.subscribers[event].handlers.push(handler.bind(context))
   }
 
@@ -40,9 +39,9 @@ export default class PubSub {
    */
   publish(event, change) {
     if (this.subscribers[event]) this.subscribers[event].handlers.forEach(handler => {
-      if (this.values[event] !== change)
+      if (this.subscribers[event].value[event] !== change)
         handler(change, this.values[event])
-        this.values[event] = change;
+        this.subscribers[event].value = change;
       });
   }
 }
