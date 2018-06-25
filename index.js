@@ -1,7 +1,7 @@
-/* little-pubsub version 0.2.1 */
+/* little-pubsub version 0.2.2 */
 'use strict';
 
-const ENVIRONMENT = {version: '0.2.1', production: true};
+const ENVIRONMENT = {version: '0.2.2', production: true};
 
 class PubSub {
 
@@ -10,7 +10,6 @@ class PubSub {
    */
   constructor() {
     this.subscribers = {};
-    this.values = [];
   }
 
   /**
@@ -22,7 +21,7 @@ class PubSub {
     if (typeof context === 'undefined') {
       context = handler;
     }
-    this.subscribers[event] = this.subscribers[event] || { handlers: []};
+    this.subscribers[event] = this.subscribers[event] || { handlers: [], value: null};
     this.subscribers[event].handlers.push(handler.bind(context));
   }
 
@@ -45,9 +44,9 @@ class PubSub {
    */
   publish(event, change) {
     if (this.subscribers[event]) this.subscribers[event].handlers.forEach(handler => {
-      if (this.values[event] !== change)
+      if (this.subscribers[event].value[event] !== change)
         handler(change, this.values[event]);
-        this.values[event] = change;
+        this.subscribers[event].value = change;
       });
   }
 }
