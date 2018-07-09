@@ -38,10 +38,10 @@ export default class PubSub {
    * @param {String|Number|Boolean|Object|Array} change
    */
   publish(event, change) {
-    if (this.subscribers[event]) this.subscribers[event].handlers.forEach(handler => {
-      if (this.subscribers[event].value[event] !== change)
+    if (this.subscribers[event] && this.values[event] !== change)
+      this.subscribers[event].handlers.forEach(handler => {
         handler(change, this.values[event])
-        this.subscribers[event].value = change;
+        this.values[event] = change;
       });
   }
 }
