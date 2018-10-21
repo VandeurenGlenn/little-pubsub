@@ -1,7 +1,7 @@
-/* little-pubsub version 0.2.3 */
+/* little-pubsub version 0.2.4 */
 'use strict';
 
-const ENVIRONMENT = {version: '0.2.3', production: true};
+const ENVIRONMENT = {version: '0.2.4', production: true};
 
 class PubSub {
 
@@ -43,11 +43,11 @@ class PubSub {
    * @param {String|Number|Boolean|Object|Array} change
    */
   publish(event, change) {
-    if (this.subscribers[event] && this.values[event] !== change)
+    if (this.subscribers[event] && this.subscribers[event].value !== change)
       this.subscribers[event].handlers.forEach(handler => {
-        handler(change, this.values[event]);
-        this.values[event] = change;
-      });
+        handler(change, this.subscribers[event].value);
+      });    
+      this.subscribers[event].value = change;
   }
 }
 

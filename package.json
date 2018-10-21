@@ -1,6 +1,6 @@
 {
   "name": "little-pubsub",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Publish & Subscribe",
   "main": "index.js",
   "repository": "https://github.com/vandeurenglenn/little-pubsub",
@@ -11,7 +11,11 @@
     "build": "rollup -c",
     "test": "node test.js"
   },
-  "keywords": ["publish", "subscribe", "pubsub"],
+  "keywords": [
+    "publish",
+    "subscribe",
+    "pubsub"
+  ],
   "devDependencies": {
     "rollup": "^0.58.2",
     "tape": "^4.9.0"
