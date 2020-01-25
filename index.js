@@ -1,7 +1,7 @@
-/* little-pubsub version 0.2.5 */
+/* little-pubsub version 1.0.1 */
 'use strict';
 
-const ENVIRONMENT = {version: '0.2.5', production: true};
+const ENVIRONMENT = {version: '1.0.1', production: true};
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
@@ -38,9 +38,12 @@ var index = classIs(class LittlePubSub {
     if (typeof context === 'undefined') {
       context = handler;
     }
-    const index = this.subscribers[event].handlers.indexOf(handler.bind(context));
-    this.subscribers[event].handlers.splice(index);
-    if (this.subscribers[event].handlers.length === 0) delete this.subscribers[event];
+    if (this.subscribers[event]) {
+      const index = this.subscribers[event].handlers.indexOf(handler.bind(context));
+      this.subscribers[event].handlers.splice(index);
+      if (this.subscribers[event].handlers.length === 0) delete this.subscribers[event];  
+    }
+    
   }
 
   /**
