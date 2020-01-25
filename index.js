@@ -34,8 +34,9 @@ class PubSub {
     if (typeof context === 'undefined') {
       context = handler;
     }
-    const i = this.subscribers[event].handlers.indexOf(handler.bind(context));
-    this.subscribers[event].handlers.splice(i);
+    const index = this.subscribers[event].handlers.indexOf(handler.bind(context));
+    this.subscribers[event].handlers.splice(index);
+    if (this.subscribers[event].handlers.length === 0) delete this.subscribers[event];
   }
 
   /**
