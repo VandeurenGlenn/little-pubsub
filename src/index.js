@@ -1,4 +1,6 @@
-export default class PubSub {
+import classIs from 'class-is';
+
+export default classIs(class LittlePubSub {
 
   /**
    * Creates handlers
@@ -46,4 +48,7 @@ export default class PubSub {
       this.subscribers[event].value = change;
     }
   }
-}
+}, {
+  className: 'LittlePubSub',
+  symbolName: 'little-pubsub/index'
+})

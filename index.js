@@ -3,7 +3,11 @@
 
 const ENVIRONMENT = {version: '0.2.5', production: true};
 
-class PubSub {
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var classIs = _interopDefault(require('class-is'));
+
+var index = classIs(class LittlePubSub {
 
   /**
    * Creates handlers
@@ -51,6 +55,9 @@ class PubSub {
       this.subscribers[event].value = change;
     }
   }
-}
+}, {
+  className: 'LittlePubSub',
+  symbolName: 'little-pubsub/index'
+})
 
-module.exports = PubSub;
+module.exports = index;

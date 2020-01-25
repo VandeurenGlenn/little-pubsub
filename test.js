@@ -15,7 +15,11 @@ test('pubsub is defined', tape => {
   test('pubsub unsubscribes', tape => {
     tape.plan(1)
     pubsub.unsubscribe('on', (value) => tape.ok(value))
-    tape.ok(Boolean(Object.keys(pubsub.subscribers).length === 0))
-    
+    tape.ok(Boolean(Object.keys(pubsub.subscribers).length === 0))    
+  })
+  
+  test('classIs', tape => {
+    tape.plan(1)
+    tape.ok(PubSub.isLittlePubSub(pubsub))
   })
 });
