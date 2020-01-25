@@ -8,16 +8,26 @@
 npm i --save little-pubsub
 ```
 
-#### yarn
-```sh
-yarn add little-pubsub
-```
-
 ## USAGE
 
 ```js
 import PubSub from 'little-pubsub';
 const pubsub = new PubSub();
+```
+
+## Example
+
+```js
+import PubSub from 'little-pubsub';
+const pubsub = new PubSub();
+
+pubsub.subscribe('event', value => { console.log(value) })
+
+pubsub.publish('event', 'hello')
+
+pubsub.unsubscribe('event', value => { console.log(value) })
+
+PubSub.isLittlePubSub(pubsub)
 ```
 
 ## API
@@ -31,12 +41,12 @@ pubsub.subscribe('event-name', data => {
   console.log(data);
 })
 ```
-#### subscribe
-`name`: name of the channel to unsubscribe for<br>
+#### unsubscribe
+`name`: name of the channel to unsubscribe<br>
 `handler`: method<br>
 `context`: context<br>
 ```js
-pubsub.subscribe('event-name', data => {
+pubsub.unsubscribe('event-name', data => {
   console.log(data);
 })
 ```
@@ -47,4 +57,13 @@ pubsub.subscribe('event-name', data => {
 `context`: context<br>
 ```js
 pubsub.publish('event-name', 'data')
+```
+
+#### isLittlePubSub
+`instance`: instance to check<br>
+```js
+const LittlePubSub = require('little-pubsub')
+const pubsub = new LittlePubSub()
+
+LittlePubSub.isLittlePubSub(pubsub)
 ```
