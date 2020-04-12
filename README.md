@@ -32,6 +32,13 @@ PubSub.isLittlePubSub(pubsub)
 
 ## API
 ### pubsub([options])
+`verbose`: when false only fires after value change<br>
+```js
+pubsub = new PubSub({
+  verbose: false // default: true
+})
+```
+
 #### subscribe
 `name`: name of the channel to subscribe to<br>
 `handler`: method<br>

@@ -1,7 +1,7 @@
-/* little-pubsub version 1.0.1 */
+/* little-pubsub version 1.0.2 */
 'use strict';
 
-const ENVIRONMENT = {version: '1.0.1', production: true};
+const ENVIRONMENT = {version: '1.0.2', production: true};
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
@@ -12,8 +12,9 @@ var index = classIs(class LittlePubSub {
   /**
    * Creates handlers
    */
-  constructor() {
+  constructor(verbose = true) {
     this.subscribers = {};
+    this.verbose = verbose;
   }
 
   /**
@@ -51,11 +52,13 @@ var index = classIs(class LittlePubSub {
    * @param {String|Number|Boolean|Object|Array} change
    */
   publish(event, change) {
-    if (this.subscribers[event] && this.subscribers[event].value !== change) {
-      this.subscribers[event].handlers.forEach(handler => {
-        handler(change, this.subscribers[event].value);
-      });
-      this.subscribers[event].value = change;
+    if (this.subscribers[event]) {
+      if (this.verbose || this.subscribers[event].value !== change) {
+        this.subscribers[event].handlers.forEach(handler => {
+          handler(change, this.subscribers[event].value);
+        });
+        this.subscribers[event].value = change;
+      }
     }
   }
 }, {
