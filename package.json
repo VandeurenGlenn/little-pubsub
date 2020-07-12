@@ -7,6 +7,7 @@
   "author": "vandeurenglenn <vandeurenglenn@gmail.com>",
   "license": "MIT",
   "private": false,
+  "flat": true,
   "scripts": {
     "build": "rollup -c",
     "test": "node test.js"
