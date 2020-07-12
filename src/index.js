@@ -1,4 +1,4 @@
-import classIs from 'class-is';
+import './../../class-is/index';
 
 export default classIs(class LittlePubSub {
 
