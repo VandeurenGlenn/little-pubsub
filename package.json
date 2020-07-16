@@ -3,6 +3,7 @@
   "version": "1.2.1",
   "description": "Publish & Subscribe",
   "main": "index.js",
+  "module": "src/index.js",
   "repository": "https://github.com/vandeurenglenn/little-pubsub",
   "author": "vandeurenglenn <vandeurenglenn@gmail.com>",
   "license": "MIT",

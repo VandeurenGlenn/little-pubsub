@@ -1,7 +1,7 @@
-/* @vandeurenglenn/little-pubsub version 1.2.0 */
+/* @vandeurenglenn/little-pubsub version 1.2.1 */
 'use strict';
 
-const ENVIRONMENT = {version: '1.2.0', production: true};
+const ENVIRONMENT = {version: '1.2.1', production: true};
 
 function withIs(Class, { className, symbolName }) {
     const symbol = Symbol.for(symbolName);
