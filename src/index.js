@@ -1,6 +1,4 @@
-import classIs from 'class-is';
-
-export default classIs(class LittlePubSub {
+export default class LittlePubSub {
 
   /**
    * Creates handlers
@@ -54,7 +52,4 @@ export default classIs(class LittlePubSub {
       }
     }
   }
-}, {
-  className: 'LittlePubSub',
-  symbolName: 'little-pubsub/index'
-})
+}

@@ -1,13 +1,9 @@
-/* @vandeurenglenn/little-pubsub version 1.2.2 */
+/* @vandeurenglenn/little-pubsub version 1.2.3 */
 'use strict';
 
-const ENVIRONMENT = {version: '1.2.2', production: true};
+const ENVIRONMENT = {version: '1.2.3', production: true};
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var classIs = _interopDefault(require('class-is'));
-
-var index = classIs(class LittlePubSub {
+class LittlePubSub {
 
   /**
    * Creates handlers
@@ -61,9 +57,6 @@ var index = classIs(class LittlePubSub {
       }
     }
   }
-}, {
-  className: 'LittlePubSub',
-  symbolName: 'little-pubsub/index'
-})
+}
 
-module.exports = index;
+module.exports = LittlePubSub;
