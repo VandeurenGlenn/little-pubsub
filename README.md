@@ -66,11 +66,11 @@ pubsub.unsubscribe('event-name', data => {
 pubsub.publish('event-name', 'data')
 ```
 
-#### isLittlePubSub
+<!-- #### isLittlePubSub
 `instance`: instance to check<br>
 ```js
 const LittlePubSub = require('little-pubsub')
 const pubsub = new LittlePubSub()
 
 LittlePubSub.isLittlePubSub(pubsub)
-```
+``` -->

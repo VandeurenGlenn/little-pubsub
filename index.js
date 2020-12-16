@@ -1,7 +1,7 @@
-/* @vandeurenglenn/little-pubsub version 1.2.3 */
+/* @vandeurenglenn/little-pubsub version 1.3.0 */
 'use strict';
 
-const ENVIRONMENT = {version: '1.2.3', production: true};
+const ENVIRONMENT = {version: '1.3.0', production: true};
 
 class LittlePubSub {
 
@@ -38,9 +38,9 @@ class LittlePubSub {
     if (this.subscribers[event]) {
       const index = this.subscribers[event].handlers.indexOf(handler.bind(context));
       this.subscribers[event].handlers.splice(index);
-      if (this.subscribers[event].handlers.length === 0) delete this.subscribers[event];  
+      if (this.subscribers[event].handlers.length === 0) delete this.subscribers[event];
     }
-    
+
   }
 
   /**
@@ -50,10 +50,10 @@ class LittlePubSub {
   publish(event, change) {
     if (this.subscribers[event]) {
       if (this.verbose || this.subscribers[event].value !== change) {
+        this.subscribers[event].value = change;
         this.subscribers[event].handlers.forEach(handler => {
           handler(change, this.subscribers[event].value);
         });
-        this.subscribers[event].value = change;
       }
     }
   }

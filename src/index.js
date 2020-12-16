@@ -33,9 +33,9 @@ export default class LittlePubSub {
     if (this.subscribers[event]) {
       const index = this.subscribers[event].handlers.indexOf(handler.bind(context));
       this.subscribers[event].handlers.splice(index);
-      if (this.subscribers[event].handlers.length === 0) delete this.subscribers[event];  
+      if (this.subscribers[event].handlers.length === 0) delete this.subscribers[event];
     }
-    
+
   }
 
   /**
@@ -45,10 +45,10 @@ export default class LittlePubSub {
   publish(event, change) {
     if (this.subscribers[event]) {
       if (this.verbose || this.subscribers[event].value !== change) {
+        this.subscribers[event].value = change;
         this.subscribers[event].handlers.forEach(handler => {
           handler(change, this.subscribers[event].value)
         })
-        this.subscribers[event].value = change;
       }
     }
   }

@@ -18,8 +18,8 @@ test('pubsub is defined', tape => {
     tape.ok(Boolean(Object.keys(pubsub.subscribers).length === 0))    
   })
   
-  test('classIs', tape => {
-    tape.plan(1)
-    tape.ok(PubSub.isLittlePubSub(pubsub))
-  })
+  // test('classIs', tape => {
+  //   tape.plan(1)
+  //   tape.ok(PubSub.isLittlePubSub(pubsub))
+  // })
 });
