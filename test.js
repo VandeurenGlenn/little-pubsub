@@ -1,5 +1,5 @@
-const test = require('tape')
-const PubSub  = require('.');
+import test from 'tape'
+import PubSub  from './dist/index.js'
 
 test('pubsub is defined', tape => {
   tape.plan(1)
@@ -16,6 +16,14 @@ test('pubsub is defined', tape => {
     tape.plan(1)
     pubsub.unsubscribe('on', (value) => tape.ok(value))
     tape.ok(Boolean(Object.keys(pubsub.subscribers).length === 0))    
+  })
+
+  test('pubsub once', async (tape) => {
+    tape.plan(2)
+    setTimeout(() => pubsub.publish('on', true) ,1000)
+    let value = await pubsub.once('on')
+    console.log(value);
+    tape.ok(Boolean(Object.keys(pubsub.subscribers).length === 0))
   })
   
   // test('classIs', tape => {

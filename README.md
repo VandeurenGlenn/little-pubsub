@@ -5,20 +5,20 @@
 
 #### npm
 ```sh
-npm i --save little-pubsub
+npm i --save @vandeurenglenn/little-pubsub
 ```
 
 ## USAGE
 
 ```js
-import PubSub from 'little-pubsub';
+import PubSub from '@vandeurenglenn/little-pubsub';
 const pubsub = new PubSub();
 ```
 
 ## Example
 
 ```js
-import PubSub from 'little-pubsub';
+import PubSub from '@vandeurenglenn/little-pubsub';
 const pubsub = new PubSub();
 
 pubsub.subscribe('event', value => { console.log(value) })
@@ -27,7 +27,9 @@ pubsub.publish('event', 'hello')
 
 pubsub.unsubscribe('event', value => { console.log(value) })
 
-PubSub.isLittlePubSub(pubsub)
+pubsub.hasSubscribers('event')
+
+await pubsub.once('event')
 ```
 
 ## API
@@ -66,11 +68,14 @@ pubsub.unsubscribe('event-name', data => {
 pubsub.publish('event-name', 'data')
 ```
 
-<!-- #### isLittlePubSub
-`instance`: instance to check<br>
+#### once
+`name`: name of the channel to publish to<br>
 ```js
-const LittlePubSub = require('little-pubsub')
-const pubsub = new LittlePubSub()
+await pubsub.once('event-name')
+```
 
-LittlePubSub.isLittlePubSub(pubsub)
-``` -->
+#### hasSubscribers
+`name`: name of the channel to publish to<br>
+```js
+pubsub.hasSubscribers('event-name')
+```
