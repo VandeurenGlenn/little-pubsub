@@ -1,7 +1,7 @@
 class LittlePubSub {
     subscribers = {};
     verbose;
-    constructor(verbose = false) {
+    constructor(verbose) {
         this.verbose = verbose;
     }
     _handleContext(handler, context) {

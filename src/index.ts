@@ -2,7 +2,7 @@ export default class LittlePubSub  {
   subscribers: {} = {}
   verbose: boolean
   
-  constructor(verbose: boolean = false) {
+  constructor(verbose?: boolean) {
     this.verbose = verbose
   }
 
