@@ -1,4 +1,4 @@
-export default class LittlePubSub implements littlePubSub {
+export default class LittlePubSub  {
   subscribers: {} = {}
   verbose: boolean
   
@@ -6,7 +6,7 @@ export default class LittlePubSub implements littlePubSub {
     this.verbose = verbose
   }
 
-  #handleContext(handler: Function, context?: Function): Function {
+  _handleContext(handler: Function, context?: Function): Function {
     if (typeof context === 'undefined') {
       context = handler;
     }
@@ -20,14 +20,14 @@ export default class LittlePubSub implements littlePubSub {
   subscribe(event: string, handler: Function, context?: Function): void {    
     if (!this.hasSubscribers(event)) this.subscribers[event] = { handlers: [], value: undefined};
 
-    context = this.#handleContext(handler, context)
+    context = this._handleContext(handler, context)
     this.subscribers[event].handlers.push(handler.bind(context))
   }
 
   unsubscribe(event: string, handler: Function, context?: Function): void {
     if (!this.hasSubscribers(event)) return
     
-    context = this.#handleContext(handler, context)
+    context = this._handleContext(handler, context)
     const index = this.subscribers[event].handlers.indexOf(handler.bind(context));
     this.subscribers[event].handlers.splice(index);
     if (this.subscribers[event].handlers.length === 0) delete this.subscribers[event];    
