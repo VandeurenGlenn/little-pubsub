@@ -2,8 +2,14 @@
   "name": "@vandeurenglenn/little-pubsub",
   "version": "1.4.2",
   "description": "Publish & Subscribe",
-  "main": "dist/index.js",
-  "typings": "./typings/littlePubSub.d.ts",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
   "repository": "https://github.com/vandeurenglenn/little-pubsub",
   "author": "vandeurenglenn <vandeurenglenn@gmail.com>",
   "license": "MIT",
