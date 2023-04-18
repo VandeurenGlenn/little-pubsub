@@ -1,6 +1,6 @@
 {
   "name": "@vandeurenglenn/little-pubsub",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Publish & Subscribe",
   "main": "./index.js",
   "types": "./index.d.ts",
