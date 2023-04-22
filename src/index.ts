@@ -34,7 +34,9 @@ export default class LittlePubSub  {
   }
 
   publish(event: string, change: string | number | boolean | object | Array<any>): void {
-    if (this.verbose && this.hasSubscribers(event) || this.subscribers?.[event].value !== change) {
+    if (!this.hasSubscribers(event)) return
+        
+        if (this.verbose || this.subscribers[event]?.value !== change) {
       this.subscribers[event].value = change;
       this.subscribers[event].handlers.forEach((handler: Function) => {
         handler(change, this.subscribers[event].value)

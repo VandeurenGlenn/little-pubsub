@@ -29,7 +29,9 @@ class LittlePubSub {
             delete this.subscribers[event];
     }
     publish(event, change) {
-        if (this.verbose && this.hasSubscribers(event) || this.subscribers?.[event].value !== change) {
+        if (!this.hasSubscribers(event))
+            return;
+        if (this.verbose || this.subscribers[event]?.value !== change) {
             this.subscribers[event].value = change;
             this.subscribers[event].handlers.forEach((handler) => {
                 handler(change, this.subscribers[event].value);
