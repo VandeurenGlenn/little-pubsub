@@ -1,5 +1,5 @@
 export default class LittlePubSub  {
-  subscribers: {} = {}
+  subscribers: {[index: string]: { value?: any, handlers?: Function[] }} = {}
   verbose: boolean
   
   constructor(verbose?: boolean) {
@@ -30,18 +30,19 @@ export default class LittlePubSub  {
     context = this._handleContext(handler, context)
     const index = this.subscribers[event].handlers.indexOf(handler.bind(context));
     this.subscribers[event].handlers.splice(index);
-    if (this.subscribers[event].handlers.length === 0) delete this.subscribers[event];    
+    if (this.subscribers[event].handlers.length === 0) delete this.subscribers[event]; 
   }
 
-  publish(event: string, change: string | number | boolean | object | Array<any>): void {
-    if (!this.hasSubscribers(event)) return
-        
-        if (this.verbose || this.subscribers[event]?.value !== change) {
-      this.subscribers[event].value = change;
-      this.subscribers[event].handlers.forEach((handler: Function) => {
-        handler(change, this.subscribers[event].value)
-      })
-    }
+  publish(event: string, value: string | number | boolean | object | Array<any>): void {
+    // always set value even when having no subscribers
+    if (!this.hasSubscribers(event)) this.subscribers[event] = {}
+    const oldValue = this.subscribers[event]?.value
+    this.subscribers[event].value = value;
+    
+    if (this.verbose || oldValue !== value) 
+      for (const handler of this.subscribers[event].handlers) {
+        handler(value, oldValue)
+      }
   }
 
   once(event: string): Promise<string | number | boolean | object | Array<any>> {

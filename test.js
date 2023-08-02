@@ -1,5 +1,5 @@
 import test from 'tape'
-import PubSub  from './dist/index.js'
+import PubSub  from './index.js'
 
 test('pubsub is defined', tape => {
   tape.plan(1)
@@ -19,15 +19,9 @@ test('pubsub is defined', tape => {
   })
 
   test('pubsub once', async (tape) => {
-    tape.plan(2)
+    tape.plan(1)
     setTimeout(() => pubsub.publish('on', true) ,1000)
     let value = await pubsub.once('on')
-    console.log(value);
-    tape.ok(Boolean(Object.keys(pubsub.subscribers).length === 0))
+    tape.ok((value === true))
   })
-  
-  // test('classIs', tape => {
-  //   tape.plan(1)
-  //   tape.ok(PubSub.isLittlePubSub(pubsub))
-  // })
 });

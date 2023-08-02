@@ -3,7 +3,7 @@
       "outDir": "./",
       "esModuleInterop": true,
       "allowSyntheticDefaultImports": true,
-      "allowJs": true,
+      "allowJs": false,
       "declaration": true,
       "target": "ES2022",
       "module": "es2022"
