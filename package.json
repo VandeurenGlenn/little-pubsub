@@ -23,7 +23,8 @@
   "keywords": [
     "publish",
     "subscribe",
-    "pubsub"
+    "pubsub",
+    "once"
   ],
   "devDependencies": {
     "tape": "^4.13.0",
