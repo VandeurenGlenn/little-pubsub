@@ -24,4 +24,15 @@ test('pubsub is defined', tape => {
     let value = await pubsub.once('on')
     tape.ok((value === true))
   })
+
+  test('pubsub without subscribers', async (tape) => {
+    tape.plan(1)
+    try {
+      pubsub.publish('on', true)
+      tape.ok(true)
+      
+    } catch (error) {
+      tape.ok(false)
+    }
+  })
 });

@@ -31,7 +31,9 @@ export default class LittlePubSub {
     publish(event, value) {
         // always set value even when having no subscribers
         if (!this.hasSubscribers(event))
-            this.subscribers[event] = {};
+            this.subscribers[event] = {
+                handlers: []
+            };
         const oldValue = this.subscribers[event]?.value;
         this.subscribers[event].value = value;
         if (this.verbose || oldValue !== value)
