@@ -28,24 +28,28 @@ export default class LittlePubSub {
         if (this.subscribers[event].handlers.length === 0)
             delete this.subscribers[event];
     }
-    publish(event, value) {
+    publish(event, value, verbose) {
         // always set value even when having no subscribers
         if (!this.hasSubscribers(event))
             this.subscribers[event] = {
                 handlers: []
             };
         const oldValue = this.subscribers[event]?.value;
-        this.subscribers[event].value = value;
-        if (this.verbose || oldValue !== value)
+        if (this.verbose || verbose || oldValue !== value) {
+            this.subscribers[event].value = value;
             for (const handler of this.subscribers[event].handlers) {
                 handler(value, oldValue);
             }
+        }
+    }
+    publishVerbose(event, value) {
+        this.publish(event, value, true);
     }
     once(event) {
         return new Promise((resolve) => {
             const cb = (value) => {
-                this.unsubscribe(event, cb);
                 resolve(value);
+                this.unsubscribe(event, cb);
             };
             this.subscribe(event, cb);
         });
