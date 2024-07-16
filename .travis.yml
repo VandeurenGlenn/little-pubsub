@@ -1,8 +1,8 @@
 language: node_js
 node_js:
   - '16'
-  - '18'
-cache: 
+  - '22'
+cache:
   yarn: true
 before_script:
   - npm run build
