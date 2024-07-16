@@ -22,6 +22,12 @@ test('pubsub is defined', (tape) => {
     pubsub.publishVerbose('on', 5)
   })
 
+  test('pubsub getValue', (tape) => {
+    tape.plan(1)
+    let value = pubsub.getValue('on')
+    tape.ok(value === 5)
+  })
+
   test('pubsub unsubscribes', (tape) => {
     tape.plan(1)
     pubsub.unsubscribe('on', (value) => tape.ok(value))

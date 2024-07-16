@@ -17,6 +17,11 @@ export default class LittlePubSub {
     return this.subscribers[event] ? true : false
   }
 
+  getValue(event: string): any {
+    if (this.subscribers[event]) return this.subscribers[event].value
+    return undefined
+  }
+
   subscribe(event: string, handler: Function, context?: Function): void {
     if (!this.hasSubscribers(event))
       this.subscribers[event] = { handlers: [], value: undefined }

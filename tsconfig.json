@@ -1,17 +1,14 @@
 {
   "compilerOptions": {
-      "outDir": "./",
-      "esModuleInterop": true,
-      "allowSyntheticDefaultImports": true,
-      "allowJs": false,
-      "declaration": true,
-      "target": "ES2022",
-      "module": "es2022"
+    "outDir": "./",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": false,
+    "declaration": true,
+    "target": "ES2022",
+    "module": "NodeNext"
   },
-  "include": [
-  "./src/**/*"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"]
 }

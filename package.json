@@ -27,7 +27,7 @@
     "once"
   ],
   "devDependencies": {
-    "tape": "^4.13.0",
-    "typescript": "^5.1.6"
+    "tape": "^5.8.1",
+    "typescript": "^5.5.3"
   }
 }

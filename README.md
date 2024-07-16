@@ -98,6 +98,14 @@ pubsub.publishVerbose('event-name', 'data')
 
 #### once
 
+`name`: name of the channel to get the value from<br>
+
+```js
+pubsub.getValue('event-name')
+```
+
+#### once
+
 `name`: name of the channel to publish to<br>
 
 ```js

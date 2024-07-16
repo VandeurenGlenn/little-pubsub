@@ -9,6 +9,7 @@ export default class LittlePubSub {
     constructor(verbose?: boolean);
     _handleContext(handler: Function, context?: Function): Function;
     hasSubscribers(event: string): boolean;
+    getValue(event: string): any;
     subscribe(event: string, handler: Function, context?: Function): void;
     unsubscribe(event: string, handler: Function, context?: Function): void;
     publish(event: string, value: string | number | boolean | object | Array<any>, verbose?: boolean): void;
