@@ -22,7 +22,10 @@ export default class LittlePubSub {
         if (!this.hasSubscribers(event))
             this.subscribers[event] = { handlers: [], value: undefined };
         context = this._handleContext(handler, context);
-        this.subscribers[event].handlers.push(handler.bind(context));
+        const _handler = handler.bind(context);
+        this.subscribers[event].handlers.push(_handler);
+        if (this.subscribers[event].value !== undefined)
+            _handler(this.subscribers[event].value, undefined);
     }
     unsubscribe(event, handler, context) {
         if (!this.hasSubscribers(event))

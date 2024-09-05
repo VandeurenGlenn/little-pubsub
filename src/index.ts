@@ -27,7 +27,12 @@ export default class LittlePubSub {
       this.subscribers[event] = { handlers: [], value: undefined }
 
     context = this._handleContext(handler, context)
-    this.subscribers[event].handlers.push(handler.bind(context))
+    const _handler = handler.bind(context)
+
+    this.subscribers[event].handlers.push(_handler)
+
+    if (this.subscribers[event].value !== undefined)
+      _handler(this.subscribers[event].value, undefined)
   }
 
   unsubscribe(event: string, handler: Function, context?: Function): void {
