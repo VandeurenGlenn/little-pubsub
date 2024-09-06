@@ -59,6 +59,8 @@ pubsub = new PubSub({
 `handler`: method<br>
 `context`: context<br>
 
+subscribing to an event will also return it's initial value
+
 ```js
 pubsub.subscribe('event-name', (data) => {
   console.log(data)
