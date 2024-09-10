@@ -10,6 +10,10 @@
       "types": "./index.d.ts"
     }
   },
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
   "repository": "https://github.com/vandeurenglenn/little-pubsub",
   "author": "vandeurenglenn <vandeurenglenn@gmail.com>",
   "license": "MIT",
