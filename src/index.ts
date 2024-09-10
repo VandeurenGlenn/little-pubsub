@@ -35,7 +35,12 @@ export default class LittlePubSub {
       _handler(this.subscribers[event].value, undefined)
   }
 
-  unsubscribe(event: string, handler: Function, context?: Function): void {
+  unsubscribe(
+    event: string,
+    handler: Function,
+    context?: Function,
+    keepValue?: boolean
+  ): void {
     if (!this.hasSubscribers(event)) return
 
     context = this._handleContext(handler, context)
@@ -43,7 +48,9 @@ export default class LittlePubSub {
       handler.bind(context)
     )
     this.subscribers[event].handlers.splice(index)
-    if (this.subscribers[event].handlers.length === 0)
+    // delete event if no handlers left but supports keeping value for later use
+    // (like when unsubscribing from a value that is still needed because others might subscibe to it)
+    if (this.subscribers[event].handlers.length === 0 && !keepValue)
       delete this.subscribers[event]
   }
 

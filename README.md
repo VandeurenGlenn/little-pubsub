@@ -72,11 +72,16 @@ pubsub.subscribe('event-name', (data) => {
 `name`: name of the channel to unsubscribe<br>
 `handler`: method<br>
 `context`: context<br>
+`keepValue`: boolean<br>
 
 ```js
-pubsub.unsubscribe('event-name', (data) => {
-  console.log(data)
-})
+pubsub.unsubscribe(
+  'event-name',
+  (data) => {
+    console.log(data)
+  },
+  false // default
+)
 ```
 
 #### publish
