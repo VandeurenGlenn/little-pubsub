@@ -17,6 +17,20 @@ import PubSub from '@vandeurenglenn/little-pubsub'
 const pubsub = new PubSub()
 ```
 
+## Breaking Changes
+
+### v1.5.0
+
+`subscribe[context]` & `unsubscribe[context]` -> `subscribe[options({keepValue, context})]`
+
+```js
+// before
+pusbub.subscribe(topic, handler, context)
+
+// now
+pusbub.subscribe(topic, handler, { context })
+```
+
 ## Example
 
 ```js
@@ -57,7 +71,7 @@ pubsub = new PubSub({
 
 `name`: name of the channel to subscribe to<br>
 `handler`: method<br>
-`context`: context<br>
+`options`: { context, keepValue }<br>
 
 subscribing to an event will also return it's initial value
 
@@ -71,8 +85,7 @@ pubsub.subscribe('event-name', (data) => {
 
 `name`: name of the channel to unsubscribe<br>
 `handler`: method<br>
-`context`: context<br>
-`options`: {keepValue: boolean}<br>
+`options`: { context, keepValue }<br>
 
 ```js
 pubsub.unsubscribe(
