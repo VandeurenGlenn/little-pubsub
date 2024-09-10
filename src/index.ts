@@ -22,11 +22,15 @@ export default class LittlePubSub {
     return undefined
   }
 
-  subscribe(event: string, handler: Function, context?: Function): void {
+  subscribe(
+    event: string,
+    handler: Function,
+    options?: { context?: Function }
+  ): void {
     if (!this.hasSubscribers(event))
       this.subscribers[event] = { handlers: [], value: undefined }
 
-    context = this._handleContext(handler, context)
+    const context = this._handleContext(handler, options?.context)
     const _handler = handler.bind(context)
 
     this.subscribers[event].handlers.push(_handler)
@@ -38,19 +42,19 @@ export default class LittlePubSub {
   unsubscribe(
     event: string,
     handler: Function,
-    context?: Function,
-    keepValue?: boolean
+    options?: { keepValue?: boolean; context?: Function }
   ): void {
+    if (!options) options = { keepValue: false }
     if (!this.hasSubscribers(event)) return
 
-    context = this._handleContext(handler, context)
+    const context = this._handleContext(handler, options.context)
     const index = this.subscribers[event].handlers.indexOf(
       handler.bind(context)
     )
     this.subscribers[event].handlers.splice(index)
     // delete event if no handlers left but supports keeping value for later use
     // (like when unsubscribing from a value that is still needed because others might subscibe to it)
-    if (this.subscribers[event].handlers.length === 0 && !keepValue)
+    if (this.subscribers[event].handlers.length === 0 && !options.keepValue)
       delete this.subscribers[event]
   }
 
@@ -82,14 +86,15 @@ export default class LittlePubSub {
   }
 
   once(
-    event: string
+    event: string,
+    options?: { keepValue?: boolean; context?: Function }
   ): Promise<string | number | boolean | object | Array<any>> {
     return new Promise((resolve) => {
       const cb = (value: string | number | boolean | object | Array<any>) => {
         resolve(value)
-        this.unsubscribe(event, cb)
+        this.unsubscribe(event, cb, options)
       }
-      this.subscribe(event, cb)
+      this.subscribe(event, cb, options)
     })
   }
 }

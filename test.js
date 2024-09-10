@@ -34,6 +34,15 @@ test('pubsub is defined', (tape) => {
     tape.ok(Boolean(Object.keys(pubsub.subscribers).length === 0))
   })
 
+  test('pubsub unsubscribes and keeps value', (tape) => {
+    tape.plan(2)
+    pubsub.subscribe('on', (value) => tape.ok(value))
+    pubsub.publish('on', 5)
+    pubsub.unsubscribe('on', (value) => tape.ok(value), { keepValue: true })
+    tape.ok(pubsub.subscribers['on'].value === 5)
+    pubsub.unsubscribe('on', (value) => tape.ok(value))
+  })
+
   test('pubsub once', async (tape) => {
     tape.plan(1)
     setTimeout(() => pubsub.publish('on', true), 1000)
