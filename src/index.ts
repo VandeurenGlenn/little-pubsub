@@ -58,11 +58,7 @@ export default class LittlePubSub {
       delete this.subscribers[event]
   }
 
-  publish(
-    event: string,
-    value: string | number | boolean | object | Array<any>,
-    verbose?: boolean
-  ): void {
+  publish(event: string, value: any, verbose?: boolean): void {
     // always set value even when having no subscribers
     if (!this.hasSubscribers(event))
       this.subscribers[event] = {
@@ -78,19 +74,16 @@ export default class LittlePubSub {
     }
   }
 
-  publishVerbose(
-    event: string,
-    value: string | number | boolean | object | Array<any>
-  ) {
+  publishVerbose(event: string, value: any) {
     this.publish(event, value, true)
   }
 
   once(
     event: string,
     options?: { keepValue?: boolean; context?: Function }
-  ): Promise<string | number | boolean | object | Array<any>> {
+  ): Promise<any> {
     return new Promise((resolve) => {
-      const cb = (value: string | number | boolean | object | Array<any>) => {
+      const cb = (value: any) => {
         resolve(value)
         this.unsubscribe(event, cb, options)
       }
