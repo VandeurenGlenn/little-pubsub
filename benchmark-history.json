@@ -1,0 +1,1552 @@
+[
+  {
+    "timestamp": "2026-01-13T22:57:18.661Z",
+    "nodeVersion": "v25.2.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "results": [
+      {
+        "name": "subscribe",
+        "iterations": 100000,
+        "totalMs": 3.0636249999999983,
+        "opsPerSec": 32641070.627116587,
+        "avgTimePerOp": 0.00003063624999999998
+      },
+      {
+        "name": "publish (1 subscriber)",
+        "iterations": 100000,
+        "totalMs": 1.859917000000003,
+        "opsPerSec": 53765840.088563,
+        "avgTimePerOp": 0.000018599170000000028
+      },
+      {
+        "name": "publish (10 subscribers)",
+        "iterations": 100000,
+        "totalMs": 5.670375,
+        "opsPerSec": 17635517.9331173,
+        "avgTimePerOp": 0.00005670375
+      },
+      {
+        "name": "publish (100 subscribers)",
+        "iterations": 10000,
+        "totalMs": 4.657041999999997,
+        "opsPerSec": 2147285.7663727333,
+        "avgTimePerOp": 0.0004657041999999997
+      },
+      {
+        "name": "getValue",
+        "iterations": 100000,
+        "totalMs": 0.3065420000000003,
+        "opsPerSec": 326219571.8694336,
+        "avgTimePerOp": 0.000003065420000000003
+      },
+      {
+        "name": "hasSubscribers",
+        "iterations": 100000,
+        "totalMs": 0.34337500000000176,
+        "opsPerSec": 291226792.86494213,
+        "avgTimePerOp": 0.0000034337500000000177
+      },
+      {
+        "name": "full cycle (sub+pub+unsub)",
+        "iterations": 50000,
+        "totalMs": 6.911082999999998,
+        "opsPerSec": 7234756.115647867,
+        "avgTimePerOp": 0.00013822165999999997
+      },
+      {
+        "name": "lookup (1000 events)",
+        "iterations": 100000,
+        "totalMs": 5.647708999999999,
+        "opsPerSec": 17706294.711714078,
+        "avgTimePerOp": 0.00005647708999999999
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-13T22:57:22.417Z",
+    "nodeVersion": "v25.2.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "results": [
+      {
+        "name": "subscribe",
+        "iterations": 100000,
+        "totalMs": 2.999500000000001,
+        "opsPerSec": 33338889.814969152,
+        "avgTimePerOp": 0.00002999500000000001
+      },
+      {
+        "name": "publish (1 subscriber)",
+        "iterations": 100000,
+        "totalMs": 1.808916,
+        "opsPerSec": 55281726.73579094,
+        "avgTimePerOp": 0.00001808916
+      },
+      {
+        "name": "publish (10 subscribers)",
+        "iterations": 100000,
+        "totalMs": 5.152750000000001,
+        "opsPerSec": 19407112.706807043,
+        "avgTimePerOp": 0.00005152750000000001
+      },
+      {
+        "name": "publish (100 subscribers)",
+        "iterations": 10000,
+        "totalMs": 4.448791999999997,
+        "opsPerSec": 2247801.200865315,
+        "avgTimePerOp": 0.00044487919999999976
+      },
+      {
+        "name": "getValue",
+        "iterations": 100000,
+        "totalMs": 0.3171249999999972,
+        "opsPerSec": 315333070.5557773,
+        "avgTimePerOp": 0.000003171249999999972
+      },
+      {
+        "name": "hasSubscribers",
+        "iterations": 100000,
+        "totalMs": 0.3432500000000047,
+        "opsPerSec": 291332847.778583,
+        "avgTimePerOp": 0.000003432500000000047
+      },
+      {
+        "name": "full cycle (sub+pub+unsub)",
+        "iterations": 50000,
+        "totalMs": 6.979958999999994,
+        "opsPerSec": 7163365.85931236,
+        "avgTimePerOp": 0.00013959917999999987
+      },
+      {
+        "name": "lookup (1000 events)",
+        "iterations": 100000,
+        "totalMs": 5.609875000000002,
+        "opsPerSec": 17825709.12899128,
+        "avgTimePerOp": 0.00005609875000000002
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-13T23:00:02.359Z",
+    "nodeVersion": "v25.2.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "results": [
+      {
+        "name": "subscribe",
+        "iterations": 100000,
+        "totalMs": 6.867750000000001,
+        "opsPerSec": 14560809.581012702,
+        "avgTimePerOp": 0.00006867750000000001
+      },
+      {
+        "name": "publish (1 subscriber)",
+        "iterations": 100000,
+        "totalMs": 2.1074170000000017,
+        "opsPerSec": 47451453.604103945,
+        "avgTimePerOp": 0.000021074170000000017
+      },
+      {
+        "name": "publish (10 subscribers)",
+        "iterations": 100000,
+        "totalMs": 5.775291000000003,
+        "opsPerSec": 17315144.81261636,
+        "avgTimePerOp": 0.00005775291000000003
+      },
+      {
+        "name": "publish (100 subscribers)",
+        "iterations": 10000,
+        "totalMs": 4.323042000000001,
+        "opsPerSec": 2313185.9463775735,
+        "avgTimePerOp": 0.00043230420000000007
+      },
+      {
+        "name": "getValue",
+        "iterations": 100000,
+        "totalMs": 0.760666999999998,
+        "opsPerSec": 131463570.78721735,
+        "avgTimePerOp": 0.00000760666999999998
+      },
+      {
+        "name": "hasSubscribers",
+        "iterations": 100000,
+        "totalMs": 0.5382079999999974,
+        "opsPerSec": 185801771.80569685,
+        "avgTimePerOp": 0.000005382079999999974
+      },
+      {
+        "name": "full cycle (sub+pub+unsub)",
+        "iterations": 50000,
+        "totalMs": 8.054667000000002,
+        "opsPerSec": 6207581.269343597,
+        "avgTimePerOp": 0.00016109334000000003
+      },
+      {
+        "name": "lookup (1000 events)",
+        "iterations": 100000,
+        "totalMs": 4.177250000000001,
+        "opsPerSec": 23939194.446106885,
+        "avgTimePerOp": 0.00004177250000000001
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-13T23:00:57.744Z",
+    "nodeVersion": "v25.2.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "results": [
+      {
+        "name": "subscribe",
+        "iterations": 100000,
+        "totalMs": 6.808499999999999,
+        "opsPerSec": 14687522.949254612,
+        "avgTimePerOp": 0.00006808499999999998
+      },
+      {
+        "name": "publish (1 subscriber)",
+        "iterations": 100000,
+        "totalMs": 1.6487499999999997,
+        "opsPerSec": 60652009.09780137,
+        "avgTimePerOp": 0.000016487499999999998
+      },
+      {
+        "name": "publish (10 subscribers)",
+        "iterations": 100000,
+        "totalMs": 5.750167000000001,
+        "opsPerSec": 17390799.25852588,
+        "avgTimePerOp": 0.00005750167000000001
+      },
+      {
+        "name": "publish (100 subscribers)",
+        "iterations": 10000,
+        "totalMs": 4.386541999999999,
+        "opsPerSec": 2279700.0461867237,
+        "avgTimePerOp": 0.00043865419999999987
+      },
+      {
+        "name": "getValue",
+        "iterations": 100000,
+        "totalMs": 0.6847500000000011,
+        "opsPerSec": 146038700.2555675,
+        "avgTimePerOp": 0.000006847500000000011
+      },
+      {
+        "name": "hasSubscribers",
+        "iterations": 100000,
+        "totalMs": 0.5184169999999995,
+        "opsPerSec": 192894908.92466894,
+        "avgTimePerOp": 0.000005184169999999995
+      },
+      {
+        "name": "full cycle (sub+pub+unsub)",
+        "iterations": 50000,
+        "totalMs": 6.948,
+        "opsPerSec": 7196315.486470927,
+        "avgTimePerOp": 0.00013896
+      },
+      {
+        "name": "lookup (1000 events)",
+        "iterations": 100000,
+        "totalMs": 6.098583999999995,
+        "opsPerSec": 16397248.935162669,
+        "avgTimePerOp": 0.00006098583999999995
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-13T23:02:56.525Z",
+    "nodeVersion": "v25.2.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "results": [
+      {
+        "name": "subscribe",
+        "iterations": 100000,
+        "totalMs": 5.3991250000000015,
+        "opsPerSec": 18521519.690690618,
+        "avgTimePerOp": 0.000053991250000000016
+      },
+      {
+        "name": "publish (1 subscriber)",
+        "iterations": 100000,
+        "totalMs": 1.201625,
+        "opsPerSec": 83220638.71840218,
+        "avgTimePerOp": 0.000012016249999999999
+      },
+      {
+        "name": "publish (10 subscribers)",
+        "iterations": 100000,
+        "totalMs": 4.609833000000002,
+        "opsPerSec": 21692759.80279545,
+        "avgTimePerOp": 0.00004609833000000002
+      },
+      {
+        "name": "publish (100 subscribers)",
+        "iterations": 10000,
+        "totalMs": 4.900832999999999,
+        "opsPerSec": 2040469.4467246695,
+        "avgTimePerOp": 0.0004900832999999999
+      },
+      {
+        "name": "getValue",
+        "iterations": 100000,
+        "totalMs": 0.8152919999999995,
+        "opsPerSec": 122655441.2406844,
+        "avgTimePerOp": 0.000008152919999999994
+      },
+      {
+        "name": "hasSubscribers",
+        "iterations": 100000,
+        "totalMs": 0.6173330000000021,
+        "opsPerSec": 161987128.5027686,
+        "avgTimePerOp": 0.000006173330000000021
+      },
+      {
+        "name": "full cycle (sub+pub+unsub)",
+        "iterations": 50000,
+        "totalMs": 4.781000000000006,
+        "opsPerSec": 10458063.166701512,
+        "avgTimePerOp": 0.00009562000000000012
+      },
+      {
+        "name": "lookup (1000 events)",
+        "iterations": 100000,
+        "totalMs": 5.657250000000005,
+        "opsPerSec": 17676432.895841606,
+        "avgTimePerOp": 0.00005657250000000005
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-13T23:03:32.995Z",
+    "nodeVersion": "v25.2.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "results": [
+      {
+        "name": "subscribe",
+        "iterations": 100000,
+        "totalMs": 5.426582999999997,
+        "opsPerSec": 18427802.541673105,
+        "avgTimePerOp": 0.00005426582999999997
+      },
+      {
+        "name": "publish (1 subscriber)",
+        "iterations": 100000,
+        "totalMs": 1.284082999999999,
+        "opsPerSec": 77876585.85932535,
+        "avgTimePerOp": 0.00001284082999999999
+      },
+      {
+        "name": "publish (10 subscribers)",
+        "iterations": 100000,
+        "totalMs": 6.5610000000000035,
+        "opsPerSec": 15241579.02758725,
+        "avgTimePerOp": 0.00006561000000000003
+      },
+      {
+        "name": "publish (100 subscribers)",
+        "iterations": 10000,
+        "totalMs": 5.028666000000001,
+        "opsPerSec": 1988598.9644172029,
+        "avgTimePerOp": 0.0005028666000000001
+      },
+      {
+        "name": "getValue",
+        "iterations": 100000,
+        "totalMs": 0.7693750000000037,
+        "opsPerSec": 129975629.5694551,
+        "avgTimePerOp": 0.000007693750000000036
+      },
+      {
+        "name": "hasSubscribers",
+        "iterations": 100000,
+        "totalMs": 0.7372080000000025,
+        "opsPerSec": 135646927.32580176,
+        "avgTimePerOp": 0.000007372080000000025
+      },
+      {
+        "name": "full cycle (sub+pub+unsub)",
+        "iterations": 50000,
+        "totalMs": 4.455207999999999,
+        "opsPerSec": 11222820.573135981,
+        "avgTimePerOp": 0.00008910415999999998
+      },
+      {
+        "name": "lookup (1000 events)",
+        "iterations": 100000,
+        "totalMs": 6.093249999999998,
+        "opsPerSec": 16411603.003323354,
+        "avgTimePerOp": 0.00006093249999999998
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-13T23:03:37.815Z",
+    "nodeVersion": "v25.2.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "results": [
+      {
+        "name": "subscribe",
+        "iterations": 100000,
+        "totalMs": 4.736874999999998,
+        "opsPerSec": 21110964.50719093,
+        "avgTimePerOp": 0.000047368749999999976
+      },
+      {
+        "name": "publish (1 subscriber)",
+        "iterations": 100000,
+        "totalMs": 1.221,
+        "opsPerSec": 81900081.90008189,
+        "avgTimePerOp": 0.000012210000000000002
+      },
+      {
+        "name": "publish (10 subscribers)",
+        "iterations": 100000,
+        "totalMs": 4.805792,
+        "opsPerSec": 20808224.742144477,
+        "avgTimePerOp": 0.00004805792
+      },
+      {
+        "name": "publish (100 subscribers)",
+        "iterations": 10000,
+        "totalMs": 4.384582999999999,
+        "opsPerSec": 2280718.599693517,
+        "avgTimePerOp": 0.0004384582999999999
+      },
+      {
+        "name": "getValue",
+        "iterations": 100000,
+        "totalMs": 0.7249160000000003,
+        "opsPerSec": 137947017.30959168,
+        "avgTimePerOp": 0.000007249160000000003
+      },
+      {
+        "name": "hasSubscribers",
+        "iterations": 100000,
+        "totalMs": 0.7220830000000049,
+        "opsPerSec": 138488234.7320174,
+        "avgTimePerOp": 0.000007220830000000049
+      },
+      {
+        "name": "full cycle (sub+pub+unsub)",
+        "iterations": 50000,
+        "totalMs": 4.316208000000003,
+        "opsPerSec": 11584242.464681953,
+        "avgTimePerOp": 0.00008632416000000006
+      },
+      {
+        "name": "lookup (1000 events)",
+        "iterations": 100000,
+        "totalMs": 5.138959,
+        "opsPerSec": 19459193.97294277,
+        "avgTimePerOp": 0.00005138959
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-13T23:03:37.962Z",
+    "nodeVersion": "v25.2.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "results": [
+      {
+        "name": "subscribe",
+        "iterations": 100000,
+        "totalMs": 4.782791,
+        "opsPerSec": 20908293.922941647,
+        "avgTimePerOp": 0.00004782791
+      },
+      {
+        "name": "publish (1 subscriber)",
+        "iterations": 100000,
+        "totalMs": 1.1607090000000007,
+        "opsPerSec": 86154238.48699369,
+        "avgTimePerOp": 0.000011607090000000007
+      },
+      {
+        "name": "publish (10 subscribers)",
+        "iterations": 100000,
+        "totalMs": 4.908000000000001,
+        "opsPerSec": 20374898.125509366,
+        "avgTimePerOp": 0.00004908000000000001
+      },
+      {
+        "name": "publish (100 subscribers)",
+        "iterations": 10000,
+        "totalMs": 4.7507499999999965,
+        "opsPerSec": 2104930.8003999386,
+        "avgTimePerOp": 0.00047507499999999966
+      },
+      {
+        "name": "getValue",
+        "iterations": 100000,
+        "totalMs": 0.6320830000000015,
+        "opsPerSec": 158207070.90682673,
+        "avgTimePerOp": 0.000006320830000000015
+      },
+      {
+        "name": "hasSubscribers",
+        "iterations": 100000,
+        "totalMs": 0.6706250000000011,
+        "opsPerSec": 149114631.8732523,
+        "avgTimePerOp": 0.000006706250000000011
+      },
+      {
+        "name": "full cycle (sub+pub+unsub)",
+        "iterations": 50000,
+        "totalMs": 4.1257499999999965,
+        "opsPerSec": 12119008.665091205,
+        "avgTimePerOp": 0.00008251499999999992
+      },
+      {
+        "name": "lookup (1000 events)",
+        "iterations": 100000,
+        "totalMs": 5.2329579999999964,
+        "opsPerSec": 19109650.79406333,
+        "avgTimePerOp": 0.000052329579999999966
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-13T23:03:38.110Z",
+    "nodeVersion": "v25.2.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "results": [
+      {
+        "name": "subscribe",
+        "iterations": 100000,
+        "totalMs": 4.762250000000002,
+        "opsPerSec": 20998477.61037324,
+        "avgTimePerOp": 0.000047622500000000014
+      },
+      {
+        "name": "publish (1 subscriber)",
+        "iterations": 100000,
+        "totalMs": 1.1823750000000004,
+        "opsPerSec": 84575536.5260598,
+        "avgTimePerOp": 0.000011823750000000003
+      },
+      {
+        "name": "publish (10 subscribers)",
+        "iterations": 100000,
+        "totalMs": 4.716166999999999,
+        "opsPerSec": 21203659.666843865,
+        "avgTimePerOp": 0.000047161669999999984
+      },
+      {
+        "name": "publish (100 subscribers)",
+        "iterations": 10000,
+        "totalMs": 4.573166999999998,
+        "opsPerSec": 2186668.4509881237,
+        "avgTimePerOp": 0.0004573166999999998
+      },
+      {
+        "name": "getValue",
+        "iterations": 100000,
+        "totalMs": 0.8767919999999947,
+        "opsPerSec": 114052135.51218602,
+        "avgTimePerOp": 0.000008767919999999947
+      },
+      {
+        "name": "hasSubscribers",
+        "iterations": 100000,
+        "totalMs": 0.690291000000002,
+        "opsPerSec": 144866440.3852864,
+        "avgTimePerOp": 0.00000690291000000002
+      },
+      {
+        "name": "full cycle (sub+pub+unsub)",
+        "iterations": 50000,
+        "totalMs": 4.029541999999999,
+        "opsPerSec": 12408358.07146321,
+        "avgTimePerOp": 0.00008059083999999999
+      },
+      {
+        "name": "lookup (1000 events)",
+        "iterations": 100000,
+        "totalMs": 5.136833000000003,
+        "opsPerSec": 19467247.621248335,
+        "avgTimePerOp": 0.00005136833000000003
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-13T23:03:42.381Z",
+    "nodeVersion": "v25.2.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "results": [
+      {
+        "name": "subscribe",
+        "iterations": 100000,
+        "totalMs": 4.936500000000002,
+        "opsPerSec": 20257267.294641946,
+        "avgTimePerOp": 0.000049365000000000026
+      },
+      {
+        "name": "publish (1 subscriber)",
+        "iterations": 100000,
+        "totalMs": 1.4602499999999985,
+        "opsPerSec": 68481424.41362788,
+        "avgTimePerOp": 0.000014602499999999984
+      },
+      {
+        "name": "publish (10 subscribers)",
+        "iterations": 100000,
+        "totalMs": 4.969167000000002,
+        "opsPerSec": 20124097.258152112,
+        "avgTimePerOp": 0.00004969167000000002
+      },
+      {
+        "name": "publish (100 subscribers)",
+        "iterations": 10000,
+        "totalMs": 4.777125000000002,
+        "opsPerSec": 2093309.2602768394,
+        "avgTimePerOp": 0.00047771250000000015
+      },
+      {
+        "name": "getValue",
+        "iterations": 100000,
+        "totalMs": 0.7328329999999994,
+        "opsPerSec": 136456737.07379457,
+        "avgTimePerOp": 0.000007328329999999994
+      },
+      {
+        "name": "hasSubscribers",
+        "iterations": 100000,
+        "totalMs": 0.7645419999999987,
+        "opsPerSec": 130797261.62853076,
+        "avgTimePerOp": 0.000007645419999999988
+      },
+      {
+        "name": "full cycle (sub+pub+unsub)",
+        "iterations": 50000,
+        "totalMs": 4.486332999999995,
+        "opsPerSec": 11144959.59172002,
+        "avgTimePerOp": 0.0000897266599999999
+      },
+      {
+        "name": "lookup (1000 events)",
+        "iterations": 100000,
+        "totalMs": 5.970666999999999,
+        "opsPerSec": 16748547.524087345,
+        "avgTimePerOp": 0.000059706669999999986
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-13T23:05:45.643Z",
+    "nodeVersion": "v25.2.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "results": [
+      {
+        "name": "subscribe",
+        "iterations": 100000,
+        "totalMs": 4.773958,
+        "opsPerSec": 20946979.424619988,
+        "avgTimePerOp": 0.000047739580000000005
+      },
+      {
+        "name": "publish (1 subscriber)",
+        "iterations": 100000,
+        "totalMs": 1.4925839999999972,
+        "opsPerSec": 66997904.305553444,
+        "avgTimePerOp": 0.000014925839999999973
+      },
+      {
+        "name": "publish (10 subscribers)",
+        "iterations": 100000,
+        "totalMs": 4.825708000000002,
+        "opsPerSec": 20722347.89174976,
+        "avgTimePerOp": 0.00004825708000000002
+      },
+      {
+        "name": "publish (100 subscribers)",
+        "iterations": 10000,
+        "totalMs": 4.403791999999996,
+        "opsPerSec": 2270770.2816118496,
+        "avgTimePerOp": 0.00044037919999999955
+      },
+      {
+        "name": "getValue",
+        "iterations": 100000,
+        "totalMs": 0.831667000000003,
+        "opsPerSec": 120240432.76936519,
+        "avgTimePerOp": 0.00000831667000000003
+      },
+      {
+        "name": "hasSubscribers",
+        "iterations": 100000,
+        "totalMs": 0.6052919999999986,
+        "opsPerSec": 165209518.71163046,
+        "avgTimePerOp": 0.000006052919999999986
+      },
+      {
+        "name": "full cycle (sub+pub+unsub)",
+        "iterations": 50000,
+        "totalMs": 5.087666000000006,
+        "opsPerSec": 9827689.160412641,
+        "avgTimePerOp": 0.00010175332000000012
+      },
+      {
+        "name": "lookup (1000 events)",
+        "iterations": 100000,
+        "totalMs": 4.614582999999996,
+        "opsPerSec": 21670430.45926362,
+        "avgTimePerOp": 0.00004614582999999996
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-13T23:18:05.084Z",
+    "nodeVersion": "v25.2.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "results": [
+      {
+        "name": "subscribe",
+        "iterations": 100000,
+        "totalMs": 4.848291,
+        "opsPerSec": 20625824.64625164,
+        "avgTimePerOp": 0.00004848291
+      },
+      {
+        "name": "publish (1 subscriber)",
+        "iterations": 100000,
+        "totalMs": 1.3923330000000007,
+        "opsPerSec": 71821898.92791447,
+        "avgTimePerOp": 0.000013923330000000007
+      },
+      {
+        "name": "publish (10 subscribers)",
+        "iterations": 100000,
+        "totalMs": 4.561917000000001,
+        "opsPerSec": 21920609.252645317,
+        "avgTimePerOp": 0.00004561917000000001
+      },
+      {
+        "name": "publish (100 subscribers)",
+        "iterations": 10000,
+        "totalMs": 4.160625,
+        "opsPerSec": 2403485.053327325,
+        "avgTimePerOp": 0.0004160625
+      },
+      {
+        "name": "getValue",
+        "iterations": 100000,
+        "totalMs": 0.7374589999999941,
+        "opsPerSec": 135600758.82184744,
+        "avgTimePerOp": 0.0000073745899999999405
+      },
+      {
+        "name": "hasSubscribers",
+        "iterations": 100000,
+        "totalMs": 0.5470419999999976,
+        "opsPerSec": 182801320.55674052,
+        "avgTimePerOp": 0.000005470419999999976
+      },
+      {
+        "name": "full cycle (sub+pub+unsub)",
+        "iterations": 50000,
+        "totalMs": 5.314667,
+        "opsPerSec": 9407927.157054242,
+        "avgTimePerOp": 0.00010629334
+      },
+      {
+        "name": "lookup (1000 events)",
+        "iterations": 100000,
+        "totalMs": 4.896291999999995,
+        "opsPerSec": 20423618.5260193,
+        "avgTimePerOp": 0.00004896291999999995
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-13T23:18:10.285Z",
+    "nodeVersion": "v25.2.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "results": [
+      {
+        "name": "subscribe",
+        "iterations": 100000,
+        "totalMs": 5.380209000000001,
+        "opsPerSec": 18586638.54879987,
+        "avgTimePerOp": 0.000053802090000000004
+      },
+      {
+        "name": "publish (1 subscriber)",
+        "iterations": 100000,
+        "totalMs": 1.1672499999999992,
+        "opsPerSec": 85671449.98929113,
+        "avgTimePerOp": 0.000011672499999999992
+      },
+      {
+        "name": "publish (10 subscribers)",
+        "iterations": 100000,
+        "totalMs": 4.5569169999999986,
+        "opsPerSec": 21944661.269889276,
+        "avgTimePerOp": 0.00004556916999999999
+      },
+      {
+        "name": "publish (100 subscribers)",
+        "iterations": 10000,
+        "totalMs": 4.088375000000006,
+        "opsPerSec": 2445959.580517928,
+        "avgTimePerOp": 0.0004088375000000006
+      },
+      {
+        "name": "getValue",
+        "iterations": 100000,
+        "totalMs": 0.7554999999999978,
+        "opsPerSec": 132362673.72600964,
+        "avgTimePerOp": 0.0000075549999999999785
+      },
+      {
+        "name": "hasSubscribers",
+        "iterations": 100000,
+        "totalMs": 0.5217080000000038,
+        "opsPerSec": 191678103.46017173,
+        "avgTimePerOp": 0.000005217080000000038
+      },
+      {
+        "name": "full cycle (sub+pub+unsub)",
+        "iterations": 50000,
+        "totalMs": 5.3664580000000015,
+        "opsPerSec": 9317132.454963773,
+        "avgTimePerOp": 0.00010732916000000003
+      },
+      {
+        "name": "lookup (1000 events)",
+        "iterations": 100000,
+        "totalMs": 4.211999999999996,
+        "opsPerSec": 23741690.408357095,
+        "avgTimePerOp": 0.00004211999999999996
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-13T23:18:12.294Z",
+    "nodeVersion": "v25.2.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "results": [
+      {
+        "name": "subscribe",
+        "iterations": 100000,
+        "totalMs": 5.362041000000001,
+        "opsPerSec": 18649614.950724915,
+        "avgTimePerOp": 0.00005362041000000001
+      },
+      {
+        "name": "publish (1 subscriber)",
+        "iterations": 100000,
+        "totalMs": 1.3525410000000022,
+        "opsPerSec": 73934912.13944705,
+        "avgTimePerOp": 0.000013525410000000022
+      },
+      {
+        "name": "publish (10 subscribers)",
+        "iterations": 100000,
+        "totalMs": 4.9125830000000015,
+        "opsPerSec": 20355890.1702017,
+        "avgTimePerOp": 0.00004912583000000001
+      },
+      {
+        "name": "publish (100 subscribers)",
+        "iterations": 10000,
+        "totalMs": 4.386084000000004,
+        "opsPerSec": 2279938.0951208393,
+        "avgTimePerOp": 0.0004386084000000004
+      },
+      {
+        "name": "getValue",
+        "iterations": 100000,
+        "totalMs": 0.8177090000000007,
+        "opsPerSec": 122292893.9268125,
+        "avgTimePerOp": 0.000008177090000000006
+      },
+      {
+        "name": "hasSubscribers",
+        "iterations": 100000,
+        "totalMs": 0.5282079999999993,
+        "opsPerSec": 189319359.04037827,
+        "avgTimePerOp": 0.000005282079999999993
+      },
+      {
+        "name": "full cycle (sub+pub+unsub)",
+        "iterations": 50000,
+        "totalMs": 5.366875,
+        "opsPerSec": 9316408.5245138,
+        "avgTimePerOp": 0.0001073375
+      },
+      {
+        "name": "lookup (1000 events)",
+        "iterations": 100000,
+        "totalMs": 4.223875,
+        "opsPerSec": 23674943.032168332,
+        "avgTimePerOp": 0.000042238749999999996
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-13T23:18:14.953Z",
+    "nodeVersion": "v25.2.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "results": [
+      {
+        "name": "subscribe",
+        "iterations": 100000,
+        "totalMs": 5.846667,
+        "opsPerSec": 17103761.852693167,
+        "avgTimePerOp": 0.00005846667
+      },
+      {
+        "name": "publish (1 subscriber)",
+        "iterations": 100000,
+        "totalMs": 1.2167920000000017,
+        "opsPerSec": 82183314.81469294,
+        "avgTimePerOp": 0.000012167920000000016
+      },
+      {
+        "name": "publish (10 subscribers)",
+        "iterations": 100000,
+        "totalMs": 4.8841250000000045,
+        "opsPerSec": 20474496.455352783,
+        "avgTimePerOp": 0.00004884125000000005
+      },
+      {
+        "name": "publish (100 subscribers)",
+        "iterations": 10000,
+        "totalMs": 4.278834000000003,
+        "opsPerSec": 2337085.2900579907,
+        "avgTimePerOp": 0.00042788340000000035
+      },
+      {
+        "name": "getValue",
+        "iterations": 100000,
+        "totalMs": 0.8070840000000032,
+        "opsPerSec": 123902840.34871165,
+        "avgTimePerOp": 0.000008070840000000032
+      },
+      {
+        "name": "hasSubscribers",
+        "iterations": 100000,
+        "totalMs": 0.5876669999999962,
+        "opsPerSec": 170164395.82280552,
+        "avgTimePerOp": 0.0000058766699999999615
+      },
+      {
+        "name": "full cycle (sub+pub+unsub)",
+        "iterations": 50000,
+        "totalMs": 5.694165999999996,
+        "opsPerSec": 8780917.170310814,
+        "avgTimePerOp": 0.00011388331999999991
+      },
+      {
+        "name": "lookup (1000 events)",
+        "iterations": 100000,
+        "totalMs": 4.376415999999999,
+        "opsPerSec": 22849747.373193048,
+        "avgTimePerOp": 0.00004376415999999999
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-13T23:20:26.465Z",
+    "nodeVersion": "v25.2.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "results": [
+      {
+        "name": "subscribe",
+        "iterations": 833910,
+        "samples": 5,
+        "opsPerSec": 29274463.859722074,
+        "medianOps": 28848778.37837839,
+        "minOps": 26333861.67792656,
+        "maxOps": 32640751.52286127,
+        "margin": 8.855198331038173,
+        "avgTimePerOp": 0.000034159464193497066
+      },
+      {
+        "name": "publish (1 subscriber)",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 184089674.19875404,
+        "medianOps": 177301034.99479142,
+        "minOps": 154529650.37666607,
+        "maxOps": 220438337.22480464,
+        "margin": 14.847082998094619,
+        "avgTimePerOp": 0.00000543213520450007
+      },
+      {
+        "name": "publish (10 subscribers)",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 22841187.52105538,
+        "medianOps": 22973388.201442152,
+        "minOps": 22485426.63286357,
+        "maxOps": 23064747.72886043,
+        "margin": 1.113387080064828,
+        "avgTimePerOp": 0.00004378056084335298
+      },
+      {
+        "name": "publish (100 subscribers)",
+        "iterations": 106468,
+        "samples": 5,
+        "opsPerSec": 2345211.7466482674,
+        "medianOps": 2338645.3745702975,
+        "minOps": 2323033.231890637,
+        "maxOps": 2373956.6334838676,
+        "margin": 0.9083010412188851,
+        "avgTimePerOp": 0.00042640072966937045
+      },
+      {
+        "name": "getValue",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 349808385.90677875,
+        "medianOps": 347790884.4704688,
+        "minOps": 346210398.29082805,
+        "maxOps": 355423874.95903945,
+        "margin": 1.1500103121361567,
+        "avgTimePerOp": 0.0000028587079106402336
+      },
+      {
+        "name": "hasSubscribers",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 3652894252.6575055,
+        "medianOps": 3679284158.4740605,
+        "minOps": 3593890386.3437686,
+        "maxOps": 3685508213.1546874,
+        "margin": 1.1442799702786757,
+        "avgTimePerOp": 2.737555294058932e-7
+      },
+      {
+        "name": "subscriberCount",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 315866183.5523379,
+        "medianOps": 316526714.37989825,
+        "minOps": 312312905.0503202,
+        "maxOps": 318758931.22679514,
+        "margin": 0.8461514780779942,
+        "avgTimePerOp": 0.000003165897623967409
+      },
+      {
+        "name": "full cycle (sub+pub+unsub)",
+        "iterations": 527704,
+        "samples": 5,
+        "opsPerSec": 11806594.88324144,
+        "medianOps": 11790467.837614896,
+        "minOps": 11788240.134527428,
+        "maxOps": 11841076.677581992,
+        "margin": 0.20665794182915032,
+        "avgTimePerOp": 0.00008469842574334652
+      },
+      {
+        "name": "lookup (1000 events)",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 28301835.246478487,
+        "medianOps": 28388055.521245424,
+        "minOps": 27787941.21727796,
+        "maxOps": 28729509.000912085,
+        "margin": 1.3751696785681227,
+        "avgTimePerOp": 0.00003533339768573584
+      },
+      {
+        "name": "unsubscribe (returned fn)",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 12674915.375800222,
+        "medianOps": 12667975.935760915,
+        "minOps": 12578108.797823627,
+        "maxOps": 12778661.39381612,
+        "margin": 0.64712197652528,
+        "avgTimePerOp": 0.00007889599025720246
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-13T23:21:02.809Z",
+    "nodeVersion": "v25.2.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "results": [
+      {
+        "name": "subscribe",
+        "iterations": 987255,
+        "samples": 5,
+        "opsPerSec": 29378191.56506485,
+        "medianOps": 29638952.997466937,
+        "minOps": 26260302.611315522,
+        "maxOps": 32235319.086412102,
+        "margin": 8.326752222573012,
+        "avgTimePerOp": 0.00003403885490314361
+      },
+      {
+        "name": "publish (1 subscriber)",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 184324946.41487956,
+        "medianOps": 167313836.58658308,
+        "minOps": 157185351.07976884,
+        "maxOps": 228475651.57828683,
+        "margin": 17.08499348813854,
+        "avgTimePerOp": 0.0000054252016314123575
+      },
+      {
+        "name": "publish (10 subscribers)",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 22311867.176851336,
+        "medianOps": 22691494.94405128,
+        "minOps": 21430657.090734724,
+        "maxOps": 22813449.495768003,
+        "margin": 2.8016280713663493,
+        "avgTimePerOp": 0.00004481919832498396
+      },
+      {
+        "name": "publish (100 subscribers)",
+        "iterations": 104969,
+        "samples": 5,
+        "opsPerSec": 2265277.935004473,
+        "medianOps": 2288187.902714658,
+        "minOps": 2199641.5076160044,
+        "maxOps": 2308004.394682758,
+        "margin": 2.0797347940237128,
+        "avgTimePerOp": 0.0004414469344124986
+      },
+      {
+        "name": "getValue",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 318092090.56242806,
+        "medianOps": 318589743.38552177,
+        "minOps": 309993412.63998395,
+        "maxOps": 325693115.66177845,
+        "margin": 2.017978391019316,
+        "avgTimePerOp": 0.0000031437436820006127
+      },
+      {
+        "name": "hasSubscribers",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 3514152554.361731,
+        "medianOps": 3544528134.692686,
+        "minOps": 3434455140.8644953,
+        "maxOps": 3563474387.5280128,
+        "margin": 1.6186807633588967,
+        "avgTimePerOp": 2.8456362793892086e-7
+      },
+      {
+        "name": "subscriberCount",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 162630929.90017307,
+        "medianOps": 175583622.40250382,
+        "minOps": 135591694.35788012,
+        "maxOps": 176717472.94013524,
+        "margin": 11.759896713618112,
+        "avgTimePerOp": 0.000006148891853559621
+      },
+      {
+        "name": "full cycle (sub+pub+unsub)",
+        "iterations": 539328,
+        "samples": 5,
+        "opsPerSec": 12273141.74824523,
+        "medianOps": 12256316.936400712,
+        "minOps": 12048039.897069091,
+        "maxOps": 12515068.411265891,
+        "margin": 1.5565240399472036,
+        "avgTimePerOp": 0.00008147872977536306
+      },
+      {
+        "name": "lookup (1000 events)",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 24952105.26196974,
+        "medianOps": 24900837.395240903,
+        "minOps": 24692958.49422344,
+        "maxOps": 25262519.89644488,
+        "margin": 0.943132679430736,
+        "avgTimePerOp": 0.00004007677867262488
+      },
+      {
+        "name": "unsubscribe (returned fn)",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 12331493.759957766,
+        "medianOps": 12261620.00621615,
+        "minOps": 12239758.55950185,
+        "maxOps": 12493102.714155296,
+        "margin": 0.9295125029708471,
+        "avgTimePerOp": 0.0000810931765012242
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-13T23:21:07.324Z",
+    "nodeVersion": "v25.2.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "results": [
+      {
+        "name": "subscribe",
+        "iterations": 773449,
+        "samples": 5,
+        "opsPerSec": 28665927.796091676,
+        "medianOps": 28153699.853034183,
+        "minOps": 25740662.778411034,
+        "maxOps": 32103420.75682982,
+        "margin": 9.149243589211364,
+        "avgTimePerOp": 0.00003488462006578906
+      },
+      {
+        "name": "publish (1 subscriber)",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 189963937.36077425,
+        "medianOps": 176212726.8232246,
+        "minOps": 159157509.27410802,
+        "maxOps": 234521575.9849901,
+        "margin": 16.985956416043184,
+        "avgTimePerOp": 0.000005264157049455275
+      },
+      {
+        "name": "publish (10 subscribers)",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 23109747.120868582,
+        "medianOps": 23120228.866220746,
+        "minOps": 23080584.54534676,
+        "maxOps": 23128427.951038238,
+        "margin": 0.09039889777582151,
+        "avgTimePerOp": 0.00004327178461840369
+      },
+      {
+        "name": "publish (100 subscribers)",
+        "iterations": 113143,
+        "samples": 5,
+        "opsPerSec": 2459467.3034909014,
+        "medianOps": 2455817.7243781695,
+        "minOps": 2452577.036493222,
+        "maxOps": 2470007.149601313,
+        "margin": 0.30776235259882284,
+        "avgTimePerOp": 0.00040659210983639714
+      },
+      {
+        "name": "getValue",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 361476513.3583398,
+        "medianOps": 355566048.7047285,
+        "minOps": 350743910.29654133,
+        "maxOps": 378119581.0737496,
+        "margin": 3.3008913074593567,
+        "avgTimePerOp": 0.000002766431463857453
+      },
+      {
+        "name": "hasSubscribers",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 3472247325.8307033,
+        "medianOps": 3472716602.01625,
+        "minOps": 3459704817.98499,
+        "maxOps": 3484320557.4908695,
+        "margin": 0.2895764504058572,
+        "avgTimePerOp": 2.8799791782135197e-7
+      },
+      {
+        "name": "subscriberCount",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 332877538.4748077,
+        "medianOps": 336681518.810726,
+        "minOps": 321491721.5881689,
+        "maxOps": 340459375.0255281,
+        "margin": 2.4625826483311335,
+        "avgTimePerOp": 0.000003004107770628929
+      },
+      {
+        "name": "full cycle (sub+pub+unsub)",
+        "iterations": 599405,
+        "samples": 5,
+        "opsPerSec": 12006252.241173238,
+        "medianOps": 11959715.767374983,
+        "minOps": 11956643.982744418,
+        "maxOps": 12102396.973400313,
+        "margin": 0.5663395700775183,
+        "avgTimePerOp": 0.00008328993760190075
+      },
+      {
+        "name": "lookup (1000 events)",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 27210714.259912908,
+        "medianOps": 27443500.692948412,
+        "minOps": 26653991.4498794,
+        "maxOps": 27534650.63691092,
+        "margin": 1.4531677596022974,
+        "avgTimePerOp": 0.00003675022972378237
+      },
+      {
+        "name": "unsubscribe (returned fn)",
+        "iterations": 893519,
+        "samples": 5,
+        "opsPerSec": 12869385.61436631,
+        "medianOps": 12765659.001595534,
+        "minOps": 12706673.706028402,
+        "maxOps": 13135824.135474997,
+        "margin": 1.4758528900585077,
+        "avgTimePerOp": 0.00007770378710881764
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-13T23:21:10.723Z",
+    "nodeVersion": "v25.2.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "results": [
+      {
+        "name": "subscribe",
+        "iterations": 774192,
+        "samples": 5,
+        "opsPerSec": 27861800.704775464,
+        "medianOps": 26739650.341092937,
+        "minOps": 25078326.850811478,
+        "maxOps": 31767424.922421984,
+        "margin": 10.206649134058708,
+        "avgTimePerOp": 0.00003589143467775225
+      },
+      {
+        "name": "publish (1 subscriber)",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 184000145.08061758,
+        "medianOps": 168954593.4530098,
+        "minOps": 158236210.58454642,
+        "maxOps": 224809631.20429653,
+        "margin": 15.862239822572683,
+        "avgTimePerOp": 0.0000054347783234728505
+      },
+      {
+        "name": "publish (10 subscribers)",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 21842505.37660192,
+        "medianOps": 21931928.776061308,
+        "minOps": 21434370.038077302,
+        "maxOps": 22161217.31566715,
+        "margin": 1.3890187480305196,
+        "avgTimePerOp": 0.00004578229386960425
+      },
+      {
+        "name": "publish (100 subscribers)",
+        "iterations": 118006,
+        "samples": 5,
+        "opsPerSec": 2340098.6388556543,
+        "medianOps": 2339130.189505304,
+        "minOps": 2330844.59192542,
+        "maxOps": 2350321.135136238,
+        "margin": 0.34104117191046956,
+        "avgTimePerOp": 0.00042733241385457837
+      },
+      {
+        "name": "getValue",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 327726240.9420807,
+        "medianOps": 345293851.97391,
+        "minOps": 285405069.7073362,
+        "maxOps": 352479801.1449958,
+        "margin": 9.175047578074448,
+        "avgTimePerOp": 0.000003051327220931115
+      },
+      {
+        "name": "hasSubscribers",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 3778881367.228232,
+        "medianOps": 3780118090.889076,
+        "minOps": 3649635036.4963384,
+        "maxOps": 3906890974.2992826,
+        "margin": 2.7793393689711605,
+        "avgTimePerOp": 2.646285773013004e-7
+      },
+      {
+        "name": "subscriberCount",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 328596673.8223357,
+        "medianOps": 331867584.8336546,
+        "minOps": 321659764.3842213,
+        "maxOps": 332262672.2491312,
+        "margin": 1.4935595093393021,
+        "avgTimePerOp": 0.0000030432444381365705
+      },
+      {
+        "name": "full cycle (sub+pub+unsub)",
+        "iterations": 513042,
+        "samples": 5,
+        "opsPerSec": 11181411.110524021,
+        "medianOps": 10913291.108948478,
+        "minOps": 10862754.342851019,
+        "maxOps": 11768187.879772564,
+        "margin": 3.715331299558603,
+        "avgTimePerOp": 0.00008943415013680994
+      },
+      {
+        "name": "lookup (1000 events)",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 28470646.438134477,
+        "medianOps": 28476743.39962477,
+        "minOps": 28230976.704560313,
+        "maxOps": 28704219.21021835,
+        "margin": 0.678764143491886,
+        "avgTimePerOp": 0.000035123895137855694
+      },
+      {
+        "name": "unsubscribe (returned fn)",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 12481118.531068573,
+        "medianOps": 12544487.141975937,
+        "minOps": 12344656.53949724,
+        "maxOps": 12554211.911732541,
+        "margin": 0.7737674972867907,
+        "avgTimePerOp": 0.00008012102421035055
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-13T23:21:13.514Z",
+    "nodeVersion": "v25.2.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "results": [
+      {
+        "name": "subscribe",
+        "iterations": 750002,
+        "samples": 5,
+        "opsPerSec": 27341817.52763023,
+        "medianOps": 26728629.40408679,
+        "minOps": 24904736.316992488,
+        "maxOps": 30392086.861811418,
+        "margin": 8.3453712279732,
+        "avgTimePerOp": 0.00003657401337674248
+      },
+      {
+        "name": "publish (1 subscriber)",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 179544035.51433083,
+        "medianOps": 165472725.7924983,
+        "minOps": 151031735.54343092,
+        "maxOps": 222127645.20706323,
+        "margin": 17.089332376516094,
+        "avgTimePerOp": 0.000005569664272808339
+      },
+      {
+        "name": "publish (10 subscribers)",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 21447562.38373709,
+        "medianOps": 21416123.15401583,
+        "minOps": 21336898.814472828,
+        "maxOps": 21589665.18272261,
+        "margin": 0.49217210429546326,
+        "avgTimePerOp": 0.00004662534520744715
+      },
+      {
+        "name": "publish (100 subscribers)",
+        "iterations": 112867,
+        "samples": 5,
+        "opsPerSec": 2181918.3465670277,
+        "medianOps": 2178587.7141604596,
+        "minOps": 2163226.9925772524,
+        "maxOps": 2203940.332963371,
+        "margin": 0.7693768561044909,
+        "avgTimePerOp": 0.0004583122927461394
+      },
+      {
+        "name": "getValue",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 341495294.9642713,
+        "medianOps": 328677074.7740326,
+        "minOps": 324745651.08742493,
+        "maxOps": 371063159.0313564,
+        "margin": 6.140392460393389,
+        "avgTimePerOp": 0.000002928298031469582
+      },
+      {
+        "name": "hasSubscribers",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 3458391283.6106777,
+        "medianOps": 3517510165.603755,
+        "minOps": 3286770747.74008,
+        "maxOps": 3570892937.4881988,
+        "margin": 3.5651086753968624,
+        "avgTimePerOp": 2.891517812744329e-7
+      },
+      {
+        "name": "subscriberCount",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 152546658.32847235,
+        "medianOps": 159000408.94905353,
+        "minOps": 132736743.61459862,
+        "maxOps": 165902822.42176488,
+        "margin": 9.366543319935598,
+        "avgTimePerOp": 0.000006555371392316847
+      },
+      {
+        "name": "full cycle (sub+pub+unsub)",
+        "iterations": 525160,
+        "samples": 5,
+        "opsPerSec": 12157407.251659125,
+        "medianOps": 12118412.55441325,
+        "minOps": 12078266.31937857,
+        "maxOps": 12275542.881185554,
+        "margin": 0.7002081864991244,
+        "avgTimePerOp": 0.00008225438033784133
+      },
+      {
+        "name": "lookup (1000 events)",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 25946122.552292902,
+        "medianOps": 25927110.026643336,
+        "minOps": 25845748.489387117,
+        "maxOps": 26065509.14084825,
+        "margin": 0.3496421747245161,
+        "avgTimePerOp": 0.00003854140432677592
+      },
+      {
+        "name": "unsubscribe (returned fn)",
+        "iterations": 1000000,
+        "samples": 5,
+        "opsPerSec": 12148150.440789329,
+        "medianOps": 12135112.340802519,
+        "minOps": 12131444.295998711,
+        "maxOps": 12177894.685566762,
+        "margin": 0.17357044465906624,
+        "avgTimePerOp": 0.0000823170576355675
+      }
+    ]
+  }
+]

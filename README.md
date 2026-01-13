@@ -57,28 +57,30 @@ await pubsub.once('event')
 
 ## API
 
-### pubsub([options])
+### pubsub(verbose?)
 
-`verbose`: when false only fires after value change<br>
+`verbose`: when false only fires after value change (default: false)<br>
 
 ```js
-pubsub = new PubSub({
-  verbose: false // default: true
-})
+const pubsub = new PubSub() // verbose defaults to false
+const pubsub = new PubSub(true) // always trigger handlers
 ```
 
 #### subscribe
 
 `name`: name of the channel to subscribe to<br>
 `handler`: method<br>
-`options`: { context, keepValue }<br>
+`options`: { context }<br>
 
-subscribing to an event will also return it's initial value
+Subscribing to an event returns an unsubscribe function. If value already exists, handler is called immediately.
 
 ```js
-pubsub.subscribe('event-name', (data) => {
+const unsubscribe = pubsub.subscribe('event-name', (data) => {
   console.log(data)
 })
+
+// Later: clean unsubscribe
+unsubscribe()
 ```
 
 #### unsubscribe
@@ -134,8 +136,24 @@ await pubsub.once('event-name')
 
 #### hasSubscribers
 
-`name`: name of the channel to publish to<br>
+`name`: name of the channel to check<br>
 
 ```js
-pubsub.hasSubscribers('event-name')
+pubsub.hasSubscribers('event-name') // true or false
+```
+
+#### subscriberCount
+
+`name`: name of the channel to count<br>
+
+```js
+pubsub.subscriberCount('event-name') // number of handlers
+```
+
+#### clear
+
+Removes all subscribers and values.
+
+```js
+pubsub.clear()
 ```

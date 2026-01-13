@@ -1,93 +1,146 @@
+export type Handler<T = any> = (value: T, oldValue?: T) => void
+
+export interface HandlerEntry<T = any> {
+  original: Handler<T>
+  bound: Handler<T>
+}
+
+export interface Subscriber<T = any> {
+  value?: T
+  handlers: HandlerEntry<T>[]
+}
+
+export interface SubscribeOptions {
+  context?: object
+}
+
+export interface UnsubscribeOptions {
+  keepValue?: boolean
+  context?: object
+}
+
+export interface OnceOptions extends UnsubscribeOptions {
+  timeout?: number
+}
+
 export default class LittlePubSub {
-  subscribers: { [index: string]: { value?: any; handlers?: Function[] } } = {}
+  subscribers: Map<string, Subscriber> = new Map()
   verbose: boolean
 
   constructor(verbose?: boolean) {
-    this.verbose = verbose
-  }
-
-  _handleContext(handler: Function, context?: Function): Function {
-    if (typeof context === 'undefined') {
-      context = handler
-    }
-    return context
+    this.verbose = verbose ?? false
   }
 
   hasSubscribers(event: string): boolean {
-    return this.subscribers[event] ? true : false
+    return this.subscribers.has(event)
   }
 
-  getValue(event: string): any {
-    if (this.subscribers[event]) return this.subscribers[event].value
-    return undefined
+  subscriberCount(event: string): number {
+    return this.subscribers.get(event)?.handlers.length ?? 0
   }
 
-  subscribe(
+  clear(): void {
+    this.subscribers.clear()
+  }
+
+  getValue<T = any>(event: string): T | undefined {
+    return this.subscribers.get(event)?.value
+  }
+
+  subscribe<T = any>(
     event: string,
-    handler: Function,
-    options?: { context?: Function }
-  ): void {
-    if (!this.hasSubscribers(event))
-      this.subscribers[event] = { handlers: [], value: undefined }
+    handler: Handler<T>,
+    options?: SubscribeOptions
+  ): () => void {
+    let subscriber = this.subscribers.get(event)
+    if (subscriber === undefined) {
+      subscriber = { handlers: [], value: undefined }
+      this.subscribers.set(event, subscriber)
+    }
 
-    const context = this._handleContext(handler, options?.context)
-    const _handler = handler.bind(context)
+    // Only bind if context is provided
+    const context = options?.context
+    const boundHandler = context
+      ? (handler.bind(context) as Handler<T>)
+      : handler
 
-    this.subscribers[event].handlers.push(_handler)
+    subscriber.handlers.push({ original: handler, bound: boundHandler })
 
-    if (this.subscribers[event].value !== undefined)
-      _handler(this.subscribers[event].value, undefined)
+    // Call handler immediately if value already exists
+    if (subscriber.value !== undefined) {
+      boundHandler(subscriber.value, undefined)
+    }
+
+    // Return unsubscribe function
+    return () => this.unsubscribe(event, handler, options)
   }
 
-  unsubscribe(
+  unsubscribe<T = any>(
     event: string,
-    handler: Function,
-    options?: { keepValue?: boolean; context?: Function }
+    handler: Handler<T>,
+    options?: UnsubscribeOptions
   ): void {
-    if (!options) options = { keepValue: false }
-    if (!this.hasSubscribers(event)) return
+    const subscriber = this.subscribers.get(event)
+    if (subscriber === undefined) return
 
-    const context = this._handleContext(handler, options.context)
-    const index = this.subscribers[event].handlers.indexOf(
-      handler.bind(context)
-    )
-    this.subscribers[event].handlers.splice(index)
-    // delete event if no handlers left but supports keeping value for later use
-    // (like when unsubscribing from a value that is still needed because others might subscibe to it)
-    if (this.subscribers[event].handlers.length === 0 && !options.keepValue)
-      delete this.subscribers[event]
-  }
+    const handlers = subscriber.handlers
 
-  publish(event: string, value: any, verbose?: boolean): void {
-    // always set value even when having no subscribers
-    if (!this.hasSubscribers(event))
-      this.subscribers[event] = {
-        handlers: []
+    // Find and remove handler by original reference
+    for (let i = 0, len = handlers.length; i < len; i++) {
+      if (handlers[i].original === handler) {
+        handlers.splice(i, 1)
+        break
       }
-    const oldValue = this.subscribers[event]?.value
+    }
 
+    // Delete event if no handlers left (unless keepValue is true)
+    if (handlers.length === 0 && !options?.keepValue) {
+      this.subscribers.delete(event)
+    }
+  }
+
+  publish<T = any>(event: string, value: T, verbose?: boolean): void {
+    let subscriber = this.subscribers.get(event)
+    if (subscriber === undefined) {
+      subscriber = { handlers: [], value: undefined }
+      this.subscribers.set(event, subscriber)
+    }
+
+    const oldValue = subscriber.value
+
+    // Only trigger handlers if verbose or value changed
     if (this.verbose || verbose || oldValue !== value) {
-      this.subscribers[event].value = value
-      for (const handler of this.subscribers[event].handlers) {
-        handler(value, oldValue)
+      subscriber.value = value
+      const handlers = subscriber.handlers
+      const len = handlers.length
+      for (let i = 0; i < len; i++) {
+        handlers[i].bound(value, oldValue)
       }
     }
   }
 
-  publishVerbose(event: string, value: any) {
+  publishVerbose<T = any>(event: string, value: T): void {
     this.publish(event, value, true)
   }
 
-  once(
-    event: string,
-    options?: { keepValue?: boolean; context?: Function }
-  ): Promise<any> {
-    return new Promise((resolve) => {
-      const cb = (value: any) => {
+  once<T = any>(event: string, options?: OnceOptions): Promise<T> {
+    return new Promise((resolve, reject) => {
+      let timeoutId: ReturnType<typeof setTimeout> | undefined
+
+      const handler: Handler<T> = (value) => {
+        if (timeoutId !== undefined) clearTimeout(timeoutId)
         resolve(value)
-        this.unsubscribe(event, cb, options)
+        this.unsubscribe(event, handler, options)
       }
-      this.subscribe(event, cb, options)
+
+      this.subscribe(event, handler, options)
+
+      if (options?.timeout !== undefined) {
+        timeoutId = setTimeout(() => {
+          this.unsubscribe(event, handler, options)
+          reject(new Error(`Timeout waiting for event "${event}"`))
+        }, options.timeout)
+      }
     })
   }
 }
